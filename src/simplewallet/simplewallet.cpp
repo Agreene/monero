@@ -3448,7 +3448,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm)
       }
 
       // parse view secret key
-      epee::wipeable_string viewkey_string = input_secure_line("Secret view key: ");
+      epee::wipeable_string viewkey_string = input_secure_line("Secret view key");
       if (std::cin.eof())
         return false;
       if (viewkey_string.empty()) {
@@ -3483,7 +3483,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm)
     {
       m_wallet_file = m_generate_from_spend_key;
       // parse spend secret key
-      epee::wipeable_string spendkey_string = input_secure_line("Secret spend key: ");
+      epee::wipeable_string spendkey_string = input_secure_line("Secret spend key");
       if (std::cin.eof())
         return false;
       if (spendkey_string.empty()) {
@@ -3523,7 +3523,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm)
       }
 
       // parse spend secret key
-      epee::wipeable_string spendkey_string = input_secure_line("Secret spend key: ");
+      epee::wipeable_string spendkey_string = input_secure_line("Secret spend key");
       if (std::cin.eof())
         return false;
       if (spendkey_string.empty()) {
@@ -3538,7 +3538,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm)
       }
 
       // parse view secret key
-      epee::wipeable_string viewkey_string = input_secure_line("Secret view key: ");
+      epee::wipeable_string viewkey_string = input_secure_line("Secret view key");
       if (std::cin.eof())
         return false;
       if (viewkey_string.empty()) {
@@ -3626,7 +3626,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm)
       }
       
       // parse secret view key
-      epee::wipeable_string viewkey_string = input_secure_line("Secret view key: ");
+      epee::wipeable_string viewkey_string = input_secure_line("Secret view key");
       if (std::cin.eof())
         return false;
       if (viewkey_string.empty())
@@ -3665,7 +3665,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm)
         // get N secret spend keys from user
         for(unsigned int i=0; i<multisig_n; ++i)
         {
-          spendkey_string = input_secure_line(tr((boost::format(tr("Secret spend key (%u of %u):")) % (i+1) % multisig_m).str().c_str()));
+          spendkey_string = input_secure_line(tr((boost::format(tr("Secret spend key (%u of %u)")) % (i+1) % multisig_m).str().c_str()));
           if (std::cin.eof())
             return false;
           if (spendkey_string.empty())
